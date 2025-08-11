@@ -21,12 +21,12 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"  # Or try 3.10 or 3.9
+          python-version: "3.11"
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install --no-cache-dir -r requirements.txt  # Disable cache if necessary
+          pip install --no-cache-dir -r requirements.txt  # Ensure no cache is used during installation
 
       - name: Run tests with coverage (produces coverage.xml)
         run: |
