@@ -21,10 +21,12 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: "3.11"  # Or try 3.10 or 3.9
 
-   
-     
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install --no-cache-dir -r requirements.txt  # Disable cache if necessary
 
       - name: Run tests with coverage (produces coverage.xml)
         run: |
@@ -45,11 +47,3 @@ jobs:
         run: |
           docker stop sonarqube
           docker rm sonarqube
-          - name: Cache dependencies
-  uses: actions/cache@v4
-  with:
-    path: ~/.cache/pip
-    key: ${{ runner.os }}-python-${{ hashFiles('**/requirements.txt') }}
-    restore-keys: |
-      ${{ runner.os }}-python-
-
