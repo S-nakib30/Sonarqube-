@@ -40,7 +40,7 @@ jobs:
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v5
         env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_TOKEN: ${{ sqp_961435c886462b704ed5923e13b3e863b591a1f3 }}
           SONAR_HOST_URL: "http://localhost:9000"
 
       - name: Stop SonarQube Docker container
