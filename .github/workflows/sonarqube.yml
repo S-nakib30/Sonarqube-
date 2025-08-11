@@ -28,10 +28,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install --no-cache-dir -r requirements.txt  # Ensure no cache is used during installation
 
-      - name: Run tests with coverage (produces coverage.xml)
+      - name: Run tests without coverage
         run: |
-           export PYTHONPATH=$(pwd)/src
-             pytest --maxfail=1 --disable-warnings -q --cov=src --cov-report=xml:coverage.xml
+            pytest --maxfail=1 --disable-warnings -q
 
           
 
