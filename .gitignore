@@ -1,0 +1,4 @@
+__pycache__/       # Python bytecode cache directory
+.venv/             # Virtual environment directory
+.coverage          # Coverage report
+coverage.xml       # Coverage report file
