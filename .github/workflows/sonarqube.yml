@@ -29,8 +29,7 @@ jobs:
           pip install --no-cache-dir -r requirements.txt  # Ensure no cache is used during installation
 
       - name: Run tests without coverage
-        run: |
-            pytest --maxfail=1 --disable-warnings -q
+        run:  PYTHONPATH=src pytest
 
           
 
